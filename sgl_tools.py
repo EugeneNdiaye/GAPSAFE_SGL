@@ -3,6 +3,7 @@
 #         Alexandre Gramfort
 #         Joseph Salmon
 # GAP Safe Screening Rules for Sparse-Group Lasso.
+# http://arxiv.org/abs/1602.06225
 # firstname.lastname@telecom-paristech.fr
 
 import numpy as np

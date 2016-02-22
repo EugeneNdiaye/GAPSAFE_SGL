@@ -1,5 +1,5 @@
 # GAP Safe Screening Rules for Sparse-Group-Lasso
-(add link)
+See http://arxiv.org/abs/1602.06225
 
 In this repository, we propose an efficient implementation to solve the
 Sparse-Group-Lasso (with optional elastic net regularization) using a block
@@ -11,7 +11,7 @@ pure python version).
 This package has the following requirements:
 
 - Python (version 2.7)
-- Cython (?????)
+- Cython
 - Numpy (tested with version 0.16)
 - Scipy (at least version 0.16.1)
 
