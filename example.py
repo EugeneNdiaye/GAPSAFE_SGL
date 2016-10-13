@@ -34,16 +34,17 @@ screenings = [NO_SCREEN, STATIC_SAFE, DYNAMIC_SAFE, DST3, GAPSAFE_SEQUENTIAL,
 screenings_names = ["NO SCREENING", "STATIC SAFE", "DYNAMIC SAFE", "DST3",
                     "GAP SAFE SEQUENTIAL", "GAP SAFE"]
 
-eps_ = range(4, 6, 2)
+eps_ = range(2, 8, 2)
 times = np.zeros((len(screenings), len(eps_)))
 for ieps, eps in enumerate(eps_):
     for iscreening, screening in enumerate(screenings):
 
         begin = time.time()
 
-        coefs, dual_gaps, screening_size_groups, screening_size_features, \
-            n_iters = sgl_path(X, y, size_groups, omega, screening,
-                               eps=10 ** (-eps))
+        coefs, dual_gaps, lambdas, screening_size_groups, \
+            screening_size_features, n_iters = \
+            sgl_path(X, y, size_groups, omega, screening,
+                     eps=10 ** (-eps))
 
         duration = time.time() - begin
         times[iscreening, ieps] = duration
@@ -67,5 +68,5 @@ plt.xticks(range(len(eps_)), [r"$%s$" % (np.str(t)) for t in eps_])
 plt.xlabel(r"$-\log_{10}\text{(duality gap)}$", fontsize=20)
 plt.ylabel(r"$\text{Time (s)}$", fontsize=20)
 plt.grid(color='w')
-leg = plt.legend(frameon=True, loc='center left', bbox_to_anchor=(1, 0.8))
+leg = plt.legend(loc='best')
 plt.show()
