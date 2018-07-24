@@ -1,6 +1,8 @@
 # GAP Safe Screening Rules for Sparse-Group-Lasso
 See http://arxiv.org/abs/1602.06225
 
+Please, use the latest version in https://github.com/EugeneNdiaye/Gap_Safe_Rules
+
 In this repository, we propose an efficient implementation to solve the
 Sparse-Group-Lasso (with optional elastic net regularization) using a block
 coordinate descent algorithm with safe screening rules.
